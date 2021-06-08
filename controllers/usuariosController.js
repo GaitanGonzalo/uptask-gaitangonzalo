@@ -39,7 +39,7 @@ exports.crearCuenta = async (req, res)=> {
             archivo : 'confirmar-cuenta'
         });
         //redirigir
-        req.flash('correcto', 'Enviamos un correo, Conrima tu cuenta');
+        req.flash('correcto', 'Cuenta creada correctamente, puedes inciar sesion');
         res.redirect('/iniciar-sesion');
         
     } catch (error) {
