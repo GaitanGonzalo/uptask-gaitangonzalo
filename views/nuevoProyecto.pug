@@ -1,14 +1,11 @@
 extends layout
 
+include mixin/crearProyecto
+
 block contenido
     .contenido-principal
         h1 #{nombrePag}
         if error
             each err in error   
                 .alerta= err.texto
-        form.agregar-proyecto(action="/nuevo-proyecto" method="POST")
-            .campo 
-                label(for="nombre")  Nombre Proyecto 
-                input(type="text", name="nombre", id="nombre", placeholder="Nombre Proyecto")
-            .campo.enviar
-                input(type="submit", value="Agregar", class="boton")
+        +crearProyecto(proyecto)
